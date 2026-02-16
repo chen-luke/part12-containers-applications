@@ -1,0 +1,10 @@
+Script started on 2026-02-16 16:13:09-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+[?2004h]0;lukec@DESKTOP-KEHHQQJ: ~[01;32mlukec@DESKTOP-KEHHQQJ[00m:[01;34m~[00m$ exitscript[4Plsscript[4Plscd ~[2Plscd ~[2Plsscript[4Plsscript[2Pexit[K[7m $ docker container run -it ubuntu bash[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C $ docker container run -it ubuntu bash[1P[1P[1P
+[?2004l[?2004h]0;root@379f4e93f2b6: /root@379f4e93f2b6:/# mkdir -p /usr/src/app
+[?2004l[?2004h]0;root@379f4e93f2b6: /root@379f4e93f2b6:/# touch /usr/src/app. /index.js
+[?2004l[?2004h]0;root@379f4e93f2b6: /root@379f4e93f2b6:/# [Kexit
+[?2004lexit
+[?2004h]0;lukec@DESKTOP-KEHHQQJ: ~[01;32mlukec@DESKTOP-KEHHQQJ[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-16 16:15:22-05:00 [COMMAND_EXIT_CODE="0"]
