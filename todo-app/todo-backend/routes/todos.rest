@@ -1,0 +1,12 @@
+### Get all todos to find an ID
+GET http://localhost:3000/todos
+
+### Update a specific todo
+# Replace THE_ID_FROM_GET_ABOVE with an actual ID like 65d2f...
+PUT http://localhost:3000/todos/6998b839ac727558888563b1
+Content-Type: application/json
+
+{
+  "text": "Learn about Docker volumes (Updated)",
+  "done": true
+}
