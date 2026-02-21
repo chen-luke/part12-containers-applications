@@ -1,0 +1,83 @@
+Script started on 2026-02-20 21:35:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="130" LINES="15"]
+[?2004h]0;lukec@DESKTOP-KEHHQQJ: ~/Github/part12-containers-applications/todo-app/todo-backend[01;32mlukec@DESKTOP-KEHHQQJ[00m:[01;34m~/Github/part12-containers-applications/todo-app/todo-backend[00m$ git checkout -b exercise-12.7[2Pnano docker-compose.dev.yml[2Pcd todo-app/todo-backend/nano docker-compose.dev.ymlgit checkout -b exercise-12.7[Kgit checkout -b exercise-12.7[Kdocker exec -it [7m6bbe27e27dfa[27m6bbe27e27dfa bash
+[?2004l[?2004hroot@6bbe27e27dfa:/# mongo -u root -p example
+[?2004lbash: mongo: command not found
+[?2004hroot@6bbe27e27dfa:/# mongo -u root -p example[2@sh
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	69991a1e9db43ac6958563b0
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.7.0[0m
+Using MongoDB:		8.2.5
+[1m[33mUsing Mongosh[0m:		2.7.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2026-02-20T21:34:30.377+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-02-20T21:34:30.551+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-02-20T21:34:30.551+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-02-20T21:34:30.551+00:00: vm.max_map_count is too low
+   2026-02-20T21:34:30.551+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         80.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   68.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find()[1D[1G[0Jthe_database> db.todos.find[44m([49m)[29G[1G[0Jthe_database> db.todos.find[44m([49m{)[30G[1G[0Jthe_database> db.todos.find[44m([49m{})[31G[1C[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId([32m'6998d365fb9084f81e8563b1'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6998d365fb9084f81e8563b2'[39m),
+    text: [32m'Learn about Docker volumes (Updated)'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'699919c03f4c2061b78563b1'[39m),
+    text: [32m'test run'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.toso[1G[0Jthe_database> db.tos[21G[1G[0Jthe_database> db.to[20Gdos.fin[1G[0Jthe_database> db.todos.fi[26G[1G[0Jthe_database> db.todos.f[25G[1G[0Jthe_database> db.todos.[24GinsertOne()[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m)[34G[1G[0Jthe_database> db.todos.insertOne[44m([49m{)[35G[1G[0Jthe_database> db.todos.insertOne[44m([49m{})[36G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m})[35G[1G[0Jthe_database> db.todos.insertOne({[32m"})[39m[36G[1G[0Jthe_database> db.todos.insertOne([44m{[49m})[35G[1G[0Jthe_database> db.todos.insertOne([44m{[49mt})[36G[1G[0Jthe_database> db.todos.insertOne([44m{[49mte})[37G[1G[0Jthe_database> db.todos.insertOne([44m{[49mtex})[38G[1G[0Jthe_database> db.todos.insertOne([44m{[49mtext})[39G[1G[0Jthe_database> db.todos.insertOne({text[32m"})[39m[40G[1G[0Jthe_database> db.todos.insertOne([44m{[49mtext})[39G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:})[40G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"})[39m[41G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m})[42G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49m"[39m})[41G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49me"[39m})[42G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mex"[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexe"[39m})[44G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexer"[39m})[45G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexerc"[39m})[46G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexerci"[39m})[47G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercis"[39m})[48G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise"[39m})[49G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise "[39m})[50G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise 2"[39m})[51G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise 2."[39m})[52G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise 2.1"[39m})[53G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mexercise 2.18"[39m})[54G[1C[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m})[55G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m })[56G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m})[55G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m,})[56G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, })[57Gd[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [36mdo[39m})[59G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, don})[60G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, done})[61G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"exercise 2.18"[39m, done[32m"})[39m[62G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, done})[61G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:})[62G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:[32m"})[39m[63G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:})[62G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:t})[63G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:tr})[64G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:tru})[65G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:[33mtrue[39m})[66G[1C[1G[0Jthe_database> db.todos.insertOne[44m([49m{[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:[33mtrue[39m})[67G[1C[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:[33mtrue[39m})[68G
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'69991a6d9db43ac6958563b1'[39m)
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"exercise 2.18"[39m, [33mdone[39m:[33mtrue[39m})[68G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId([32m'6998d365fb9084f81e8563b1'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6998d365fb9084f81e8563b2'[39m),
+    text: [32m'Learn about Docker volumes (Updated)'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'699919c03f4c2061b78563b1'[39m),
+    text: [32m'test run'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'69991a6d9db43ac6958563b1'[39m),
+    text: [32m'exercise 2.18'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004l]0;[?2004hroot@6bbe27e27dfa:/# exit
+[?2004lexit
+[?2004h]0;lukec@DESKTOP-KEHHQQJ: ~/Github/part12-containers-applications/todo-app/todo-backend[01;32mlukec@DESKTOP-KEHHQQJ[00m:[01;34m~/Github/part12-containers-applications/todo-app/todo-backend[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-20 21:37:54-05:00 [COMMAND_EXIT_CODE="0"]
