@@ -14,5 +14,8 @@ services:
     image: redis:latest
     ports: 
       - 8838:6379
+    command: ['redis-server', '--appendonly', 'yes'] 
+    volumes: 
+      - ./redis_data:/data
 volumes:
   mongo_data:

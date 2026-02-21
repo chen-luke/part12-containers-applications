@@ -21,11 +21,11 @@ POST http://localhost:3000/todos
 Content-Type: application/json
 
 {
-  "text":"redis add back key",
+  "text":"redis persistent data check",
   "done": true
 }
 
 
 ### Check counter stat
 
-GET http://localhost:3000/todos/statistics
+GET http://localhost:3000/statistics
