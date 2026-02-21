@@ -14,3 +14,18 @@ Content-Type: application/json
   "text": "Learn about Docker volumes (Updated)",
   "done": true
 }
+
+### Create a new todo to test redis counter
+
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text":"redis counter plus 3",
+  "done": true
+}
+
+
+### Check counter stat
+
+GET http://localhost:3000/todos/statistics
