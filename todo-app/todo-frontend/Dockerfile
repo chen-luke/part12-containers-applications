@@ -3,6 +3,8 @@ FROM node:20 AS build-stage
 
 WORKDIR /usr/src/app
 
+ENV VITE_BACKEND=http://localhost:3000/
+
 COPY . .
 
 RUN npm ci
