@@ -20,4 +20,3 @@ FROM nginx:1.25-alpine
 # The target location here was found from the Docker hub page
 COPY --from=build-stage /usr/src/app/dist /usr/share/nginx/html
 
-ENV VITE_BACKEND=http://localhost:3000/
