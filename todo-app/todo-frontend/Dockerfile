@@ -6,7 +6,7 @@ RUN npm ci
 
 # Lint testing stage
 FROM base-stage AS test-stage
-RUN npm run lint
+RUN npm run test
 
 # Build stage
 FROM test-stage AS build-stage
