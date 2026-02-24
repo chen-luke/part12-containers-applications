@@ -1,14 +1,16 @@
-# The first FROM is now a stage called build-stage
-FROM node:20 AS build-stage
-
+# The starting stage of cleaning installation
+FROM node:20 AS base-stage
 WORKDIR /usr/src/app
-
-ENV VITE_BACKEND_URL=http://localhost:3000/
-
 COPY . .
-
 RUN npm ci
 
+# Lint testing stage
+FROM base-stage AS test-stage
+RUN npm run test
+
+# Build stage
+FROM test-stage AS build-stage
+ENV VITE_BACKEND_URL=http://localhost:3000/
 RUN npm run build
 
 # RUN npm install -g serve
