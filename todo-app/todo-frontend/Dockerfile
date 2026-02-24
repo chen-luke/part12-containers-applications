@@ -1,8 +1,8 @@
 # The starting stage of cleaning installation
 FROM node:20 AS base-stage
 WORKDIR /usr/src/app
-COPY . .
 RUN npm ci
+COPY . .
 
 # Lint testing stage
 FROM base-stage AS test-stage
