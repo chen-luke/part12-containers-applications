@@ -1,4 +1,17 @@
 services:
+  server:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3005:3000
+    environment:
+      - MONGO_URL=mongodb://root:example@mongo:27017/the_database?authSource=admin
+      - REDIS_URL=redis://redis:6379
+  debug-helper:
+    image: busybox
   mongo:
     image: mongo
     ports:
@@ -19,3 +32,4 @@ services:
       - ./redis_data:/data
 volumes:
   mongo_data:
+
