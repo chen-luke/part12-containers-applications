@@ -1,0 +1,26 @@
+services:
+  app:
+    image: my-app-production
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+    container_name: my-app-production
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+    environment:
+      - MONGO_URL=${PHONEBOOK_MONGODB_URI}
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: my-app-reverse-proxy
+    depends_on:
+      - app
+      - server
