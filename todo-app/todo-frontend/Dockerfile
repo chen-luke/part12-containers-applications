@@ -1,6 +1,7 @@
 # The starting stage of cleaning installation
 FROM node:20 AS base-stage
 WORKDIR /usr/src/app
+COPY package*.json .
 RUN npm ci
 COPY . .
 
@@ -10,7 +11,7 @@ RUN npm run test
 
 # Build stage
 FROM test-stage AS build-stage
-ENV VITE_BACKEND_URL=http://localhost:3000/
+ENV VITE_BACKEND_URL=http://localhost:8080/api/
 RUN npm run build
 
 # RUN npm install -g serve
