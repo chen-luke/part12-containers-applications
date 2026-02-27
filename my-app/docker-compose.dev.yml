@@ -1,0 +1,31 @@
+services:
+  app:
+    image: my-app-dev
+    build:
+      context: ./client
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./client:/usr/src/app
+    container_name: my-app-dev
+
+  server:
+    build:
+      context: ./server
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./server:/usr/src/app
+    environment:
+      - MONGO_URL=mongodb+srv://pk7677:8529396@cluster0.hlhek4p.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Cluster0
+  debug-helper:
+    image: busybox
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: my-app-reverse-proxy
+    depends_on:
+      - app
+      - server
